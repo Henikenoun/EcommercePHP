@@ -1,5 +1,27 @@
 :root{
     --blue:#273746;
-    --rose:#E50B2F;
-    --vert:#227D65;
+    /* --rose:#ec1839; */
+    --vert:#21D192;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-azra9{
+    background-color: var(--blue) !important;
+    color:white !important;
+}
+.text-azra9{
+    color: var(--blue )!important;
+}
+.border-azra9{
+    border-color: var(--blue) !important;
+}
+/* body{
+    background-color: red;
+} */
+input{
+    height: 50px;
 }

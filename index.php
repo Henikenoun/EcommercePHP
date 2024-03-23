@@ -9,5 +9,6 @@
 <body>
 <?php require_once('__tiers/verifSession.php') ?>
 <?php require_once('__tiers/header.php') ?>
+<?php require_once('__tiers/footer.php') ?>
 </body>
 </html>

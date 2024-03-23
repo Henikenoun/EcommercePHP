@@ -24,7 +24,7 @@
 
     <?php 
         if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])){
-            require_once('user.class.php');
+            require_once('../models/user.class.php');
             $user=new User();
             $user->nom = $_POST['name'];
             $user->prenom = $_POST['prenom'];
