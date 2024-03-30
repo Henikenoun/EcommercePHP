@@ -13,12 +13,23 @@
     background-color: var(--blue) !important;
     color:white !important;
 }
+.bg-vert{
+    background-color: var(--vert) !important;
+    color:white !important;
+}
+.text-vert{
+    color:var(--vert )!important;
+}
 .text-azra9{
-    color: var(--blue )!important;
+    color:var(--blue )!important;
 }
 .border-azra9{
     border-color: var(--blue) !important;
 }
+.border-vert{
+    border-color: var(--vert) !important;
+}
+
 /* body{
     background-color: red;
 } */

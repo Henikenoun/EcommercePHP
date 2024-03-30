@@ -59,12 +59,29 @@
             require_once('../user/connexion.php');
             $cnx = new connexion();
             $pdo = $cnx->connect();
-            $req = "DELETE FROM user WHERE id='$id'";
+            $req = "DELETE FROM product WHERE id='$id'";
             $pdo->exec($req) or print_r($pdo->errorInfo()) ;
         }
         //lister les produits
-        function listProduct(){
+        function listProducts(){
             require_once('../user/connexion.php');
+            $cnx = new connexion();
+            $pdo = $cnx->connect();
+            $req = "select * from product ";
+            $res = $pdo->query($req) or print_r($pdo->errorInfo()) ;
+            return $res;
+        }
+        function listSingleProducts(){
+            require_once('../connexion.php');
+            $cnx = new connexion();
+            $pdo = $cnx->connect();
+            $req = "select * from product ";
+            $res = $pdo->query($req) or print_r($pdo->errorInfo()) ;
+            return $res;
+        }
+        //lister les produits
+        function listProductsI(){
+            require_once('user/connexion.php');
             $cnx = new connexion();
             $pdo = $cnx->connect();
             $req = "select * from product ";
@@ -79,6 +96,17 @@
             $cnx=new connexion();
             $pdo=$cnx->connect();
             $req="SELECT * FROM product where id='$id'";
+            $res=$pdo->query($req) or print_r($pdo->errorInfo());
+            return $res;
+        }
+
+        //recuperer un produit selon leur categorie
+        function getProductByCategory($cat)
+        {
+            require_once('../user/connexion.php');
+            $cnx=new connexion();
+            $pdo=$cnx->connect();
+            $req="SELECT * FROM product where categorie='$cat'";
             $res=$pdo->query($req) or print_r($pdo->errorInfo());
             return $res;
         }

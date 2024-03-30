@@ -1,43 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once('../__tiers/fiche.php'); ?>
-    <title>Ajouter un produit</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-</head>
-<body>
-<?php require_once('../__tiers/verifSession.php') ?>
-<?php require_once('../__tiers/header.php') ?>
-<?php 
-    if(isset($_POST['name'] )){
-        require_once('../models/product.class.php');
-        $image = $_FILES['image']['name'];
-        $product = new Products();
-        $product->name = $_POST['name'];
-        $product->categorie = $_POST['categorie'];
-        $product->quantite = $_POST['quantite'];
-        $product->image = $image; 
-        $product->description = $_POST['description'];
-        $product->prix = $_POST['prix'];
-        $product->solde = $_POST['solde'];
-        $product->couleur = $_POST['couleur'] != null ? implode(',', $_POST['couleur']) : '';
-        $date = new DateTime();
-        $product->date = $date->format('Y-m-d');
-        var_dump($product);
+<?php require_once('../__tiers/header-admin.php') ?>
+<div class='row col-10'>
+    <div style='margin-top:100px; margin-left:260px;'>
 
-        move_uploaded_file($_FILES['image']['tmp_name'], 'uploaded/' . $image);
-        $product->AddProduct();
-        header('location:../index.php');
-    }
-?>
-<div class="container mt-5">
-    <div class="row justify-content-center border border-azra9">
+<div class="container my-5">
+    <div class="row justify-content-center border border-vert" style="border-color: #21D192 !important;">
         <div class="col-11 m-auto">
-            <h3 class="mb-5 bg-white w-25 text-center text-azra9" style="margin-top:-20px">Ajouter un produit</h3>
+            <h3 class="mb-5 w-25 text-center text-azra9" style="margin-top:-20px;background:#f8f9fc;">Ajouter un produit</h3>
             <div>
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" action='add.php' enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="name">Nom</label>
                         <input type="text" name="name" class="form-control" id="name" placeholder="Entrez le nom du produit" >
@@ -83,15 +53,13 @@
                         <label for="image">Image</label>
                         <input type="file" name="image" class="form-control-file" id="image">
                     </div>
-                    <button type="submit" class="btn bg-azra9 mb-5">Enregistrer</button>
+                    <button type="submit" class="btn bg-azra9 mb-4">Enregistrer</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script src="../assets/select2.js"></script>
-<?php require_once('../__tiers/footer.php') ?>
-</body>
-</html>
+    </div>
+</div>
+<?php require_once('../__tiers/footer-admin.php') ?>
+

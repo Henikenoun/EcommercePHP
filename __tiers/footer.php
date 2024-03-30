@@ -5,8 +5,7 @@
           >
     <!-- Section: Social media -->
     <section
-             class="d-flex justify-content-between p-4 text-white"
-             style="background-color: #21D192"
+             class="d-flex justify-content-between p-4 text-white bg-azra9"
              >
       <!-- Left -->
       <div class="me-5">
@@ -68,17 +67,20 @@
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
+            <?php 
+              $a = basename($_SERVER['PHP_SELF']) == 'index.php' ? 'user/' :'';
+            ?>
             <p>
-              <a href="#!" class="text-dark">Informatique</a>
+              <a href="<?= $a?>info.php" class="text-dark">Informatique</a>
             </p>
             <p>
-              <a href="#!" class="text-dark">sport</a>
+              <a href="<?= $a?>sport.php" class="text-dark">sport</a>
             </p>
             <p>
-              <a href="#!" class="text-dark">Électroménager</a>
+              <a href="<?= $a?>electro.php" class="text-dark">Électroménager</a>
             </p>
             <p>
-              <a href="#!" class="text-dark">Vêtements & Chaussures</a>
+              <a href="<?= $a?>vetement.php" class="text-dark">Vêtements & Chaussures</a>
             </p>
           </div>
           <!-- Grid column -->

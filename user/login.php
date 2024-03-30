@@ -51,7 +51,10 @@
 										$_SESSION['role'] = $data[5];
 										$_SESSION['image'] = $data[6];
 										$_SESSION['password'] = $data[7];
-										header('Location:../index.php');
+										if($_SESSION['role']=='user')
+											header('Location:../index.php');
+										else
+											header('Location:../admin.php');
 									}
 									if($user->verifMail($_POST['email'])->fetchColumn(3)){
 										echo"<div class='text-danger' id='span-login'> mot de passe incorrect </div>
@@ -73,6 +76,7 @@
             	   </div>
             	</div>
             	<a href="forgetPassword.php">mot de passe oublié</a>
+            	<a href="signUp.php" class="btn bg-vert">S'inscrire</a>
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>
