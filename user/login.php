@@ -77,7 +77,7 @@
             	</div>
             	<a href="forgetPassword.php">mot de passe oublié</a>
             	<a href="signUp.php" class="btn bg-vert">S'inscrire</a>
-            	<input type="submit" class="btn" value="Login">
+            	<input type="submit" class="btn text-white" value="Login">
             </form>
         </div>
     </div>

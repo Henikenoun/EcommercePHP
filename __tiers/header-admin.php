@@ -95,7 +95,22 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
+<!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=$a.'commandeAccepter.php' ?>" >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Commandes acceptées</span>
+                </a>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=$a.'commandeRefuser.php' ?>" >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Commandes refusées</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <!-- Divider -->
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex" style="margin-top: 250px;">

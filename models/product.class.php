@@ -31,6 +31,15 @@
             $product->execute();
         }
 
+        //modifier la quantite de produit
+        function EditProductQ($productId){
+            require_once('../user/connexion.php');
+            $cnx = new connexion();
+            $pdo = $cnx->connect();
+            $req = "UPDATE product set quantity='$this->quantite' where id=$productId";
+            $pdo->exec($req);
+        }
+
         //modifier un produit
         function EditProduct($productId){
             require_once('../user/connexion.php');
@@ -93,6 +102,16 @@
         function getProduct($id)
         {
             require_once('../user/connexion.php');
+            $cnx=new connexion();
+            $pdo=$cnx->connect();
+            $req="SELECT * FROM product where id='$id'";
+            $res=$pdo->query($req) or print_r($pdo->errorInfo());
+            return $res;
+        }
+        //recuperer un produit
+        function adminGetProduct($id)
+        {
+            require_once('user/connexion.php');
             $cnx=new connexion();
             $pdo=$cnx->connect();
             $req="SELECT * FROM product where id='$id'";
