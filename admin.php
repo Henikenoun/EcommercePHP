@@ -31,7 +31,7 @@
                                                                 <div style='width:50px'>
                                                                     <strong>Image</strong>
                                                                 </div>
-                                                                <div style='width:50px'>
+                                                                <div style='width:70px'>
                                                                     <strong>Quantite</strong>
                                                                 </div>
                                                                 <div style='width:50px'>
@@ -48,6 +48,9 @@
                                             <tbody>
                                             <?php
                                                     foreach ($commandes as $cmd){
+                                                        if($cmd['isverif']==0){
+
+                                                        
                                                         $products="";
                                                         require_once('models/product.class.php');
                                                         $mod=new Products();
@@ -94,6 +97,7 @@
                                                                
                                                                 </tr>";
                                                             }
+                                                    }
                                                 ?>
                                             </tbody>
                                         </table>

@@ -44,7 +44,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-azra9 sidebar sidebar-dark accordion" id="accordionSidebar" style='position: fixed;z-index: 100;'>
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.php">
+            <?php $a= $link=='admin.php'?'admin.php' : '../admin.php' ; ?>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=$a?>">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -53,8 +54,8 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
             <?php $a= $link=='admin.php'?'admin/' : '' ; ?>
+            <li class="nav-item active">
                 <a class="nav-link" href="<?=$a.'listProduct.php' ?>" >
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>

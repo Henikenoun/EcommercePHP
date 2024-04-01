@@ -28,7 +28,7 @@
                                 foreach($products as $key=>$p){
                                 $prod=$mod->getProduct($key)->fetchAll()[0];
                                     echo $p['quantite']." de ".$prod['name']." de prix ".$prod['prix']*(1-$prod['solde']/100)."DT 
-                                    de couleur ".$p['couleur']."  <img width='50' src='uploaded/".$prod['image']."' />";
+                                    de couleur ".$p['couleur']."  <img width='50' src='uploaded/".$prod['image']."' /><br>";
                                     $somme+=$prod['prix']*(1-$prod['solde']/100);
                                 }
                             ?>

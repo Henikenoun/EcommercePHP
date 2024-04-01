@@ -32,7 +32,7 @@
                                                                 <div style='width:50px'>
                                                                     <strong>Image</strong>
                                                                 </div>
-                                                                <div style='width:50px'>
+                                                                <div style='width:70px'>
                                                                     <strong>Quantite</strong>
                                                                 </div>
                                                                 <div style='width:50px'>

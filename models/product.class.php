@@ -36,7 +36,7 @@
             require_once('../user/connexion.php');
             $cnx = new connexion();
             $pdo = $cnx->connect();
-            $req = "UPDATE product set quantity='$this->quantite' where id=$productId";
+            $req = "UPDATE product set quantite='$this->quantite' where id=$productId";
             $pdo->exec($req);
         }
 

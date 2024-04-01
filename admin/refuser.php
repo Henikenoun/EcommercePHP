@@ -7,7 +7,7 @@
     $date=new DateTime();
     $model->date_rep = $date->format('Y-m-d');
     $model->verif = 2;
-    $model->msg = $post['msg'];
+    $model->msg = $_POST['msg'];
     $model->modifier($_GET['id']);
     header('location:commandeRefuser.php');
 ?>
