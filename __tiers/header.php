@@ -3,7 +3,7 @@
   <?php 
     $foldername = basename(dirname($_SERVER['PHP_SELF']));
     $link = basename($_SERVER['PHP_SELF']) == 'index.php' ? 'index.php' :($foldername == 'produits' ? '../../index.php' : '../index.php'); ?>
-      <a class='navbar-brand text-white me-5' href='<?php echo $link; ?>'>Navbar</a>
+      <a class='navbar-brand text-white me-5 text-uppercase' href='<?php echo $link; ?>'>Shipi-Shop</a>
       <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
         <span class='navbar-toggler-icon'></span>
         </button>
@@ -37,6 +37,7 @@
             </li>
               </ul>
           <?php 
+          $prod_nb= isset($_SESSION['nb_product']) ? $_SESSION['nb_product'] : 0;
               // URL de la page à récupérer
             $nom_fichier = basename($_SERVER['PHP_SELF']);
             if($_SESSION['image'] == '')
@@ -45,13 +46,13 @@
               $avatar = 'img/uploaded/'.$_SESSION['image'] ;
             if($nom_fichier == 'index.php'){
               echo"
-              <div style='width: 20px;background: red;text-align: center;height: 20px;border-radius: 50%;position: absolute;right: 140px;margin-top: 24px;font-size: 15px;'>".$_SESSION['nb_product']."</div>
+              <div style='width: 20px;background: red;text-align: center;height: 20px;border-radius: 50%;position: absolute;right: 140px;margin-top: 24px;font-size: 15px;'>".$prod_nb."</div>
                 <a class='nav-link' href='user/panier.php'><img src='user/img/cart-shopping-solid (1).svg' alt='' style='width: 35px;cursor:pointer;height:27px;'></a>
                 <a class='nav-link' href='user/listCommande.php'><img src='user/img/bag-shopping-solid.svg' alt='' class='mx-3' style='width: 50px;cursor:pointer;height:28px;'></a>
                 <img src='user/$avatar' alt='' id='avatar' style='width: 50px;margin-right: 5px;cursor:pointer;height:50px;border-radius:50%'>";
             }else{
               echo"
-              <div style='width: 20px;background: red;text-align: center;height: 20px;border-radius: 50%;position: absolute;right: 140px;margin-top: 24px;font-size: 15px;'>".$_SESSION['nb_product']."</div>
+              <div style='width: 20px;background: red;text-align: center;height: 20px;border-radius: 50%;position: absolute;right: 140px;margin-top: 24px;font-size: 15px;'>".$prod_nb."</div>
                 <a class='nav-link' href='panier.php'><img src='img/cart-shopping-solid (1).svg' alt='' style='width: 35px;cursor:pointer;height:27px;'></a>
                 <a class='nav-link' href='listCommande.php'><img src='img/bag-shopping-solid.svg' alt='' class='mx-3' style='width: 50px;cursor:pointer;height:28px;'></a>
                 <img src='../user/$avatar' id='avatar' style='width:50px;margin-right: 5px;cursor:pointer;height:50px;border-radius:50%'>";

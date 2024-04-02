@@ -22,7 +22,7 @@
         ?>
         <div class="premiere mt-5">
             <div class="container-fluid contenu">
-                <?php if($commandes[0]): ?>
+
                     <main>
                         <h2 class="ms-5 text-azra9">Liste des produits :</h2>
                         <div class="row justify-content-center mt-5">    
@@ -213,7 +213,6 @@
                             </div>
                         </div>
                     </main>
-                <?php endif; ?>
             </div>
         </div>
     </div>

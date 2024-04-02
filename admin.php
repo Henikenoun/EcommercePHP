@@ -87,8 +87,8 @@
                                                                 <td>".$somme."DT</td>
                                                                 ";if($cmd['isverif'] == 0)echo"
                                                                 <td class='ms-3'>
-                                                                    <a class='i text-danger' href='admin/EditCommande.php?id=".$cmd['id']."'>
-                                                                        <img width='60px' height='60px' src='user/img/images.png'/>
+                                                                    <a class='i text-primary' href='admin/EditCommande.php?id=".$cmd['id']."'>
+                                                                        <i class='fas fa-pen'></i>
                                                                     </a>
                                                                 </td>";echo"
                                                                 <td colspan=" . $num . ">

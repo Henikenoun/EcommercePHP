@@ -25,6 +25,7 @@
                                                     <th>Date</th>
                                                     <th>Prix Total</th>
                                                     <th>Date_refuse</th>
+                                                    <th>User</th>
                                                     <th>raison</th>
                                                     <th rowspan="4" class='text-center'>
                                                         <div class='d-flex justify-content-between mt-3'>
@@ -53,6 +54,9 @@
                                                         if($cmd['isverif'] ==2 ){
                                                         $products="";
                                                         require_once('../models/product.class.php');
+                                                        require_once('../models/user.class.php');
+                                                        $users=new User();
+                                                        $user=$users->getUser($cmd['id_user'])->fetchAll()[0]['nom'];
                                                         $mod=new Products();
                                                         $prods = json_decode($cmd['produits'], true);
                                                         $num = count($prods);
@@ -86,6 +90,7 @@
                                                                 <td>".$cmd['date']."</td>
                                                                 <td>".$somme."DT</td>
                                                                 <td>".$cmd['date_reponse']."</td>
+                                                                <td>".$user."</td>
                                                                 <td>".$cmd['msg']."</td>
                                                                 ";echo"
                                                                 <td colspan=" . $num . ">
